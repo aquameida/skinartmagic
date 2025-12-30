@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie SkinArt Magic — Support & Privacy</title>
+  <meta name="description" content="Support and Privacy Policy for Movie SkinArt." />
+  <style>
+    :root{
+      --bg: #F6F2EE;
+      --surface: #FFFFFF;
+      --ink: #151515;
+      --muted: #5F5F5F;
+      --brand: #7A1719;
+      --brand-2: #8E1E20;
+      --brand-3: #5E1113;
+
+      --line: rgba(0,0,0,.08);
+      --shadow: 0 12px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(122,23,25,.10), transparent 55%),
+                  radial-gradient(900px 600px at 90% 20%, rgba(122,23,25,.08), transparent 55%),
+                  var(--bg);
+      line-height:1.55;
+    }
+    a{ color: var(--brand); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{ max-width: 1080px; margin: 0 auto; padding: 22px; }
+
+    /* Topbar */
+    .topbar{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(246,242,238,.75);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      padding: 12px 22px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      min-width: 240px;
+    }
+    .logo{
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-3));
+      position: relative;
+      box-shadow: 0 10px 20px rgba(122,23,25,.22);
+      flex: 0 0 auto;
+    }
+    .logo::before, .logo::after{
+      content:"";
+      position:absolute;
+      border: 2px solid rgba(255,255,255,.75);
+      border-radius: 4px;
+    }
+    .logo::before{ inset: 8px 8px auto auto; width: 10px; height:10px; }
+    .logo::after{ inset: auto auto 8px 8px; width: 12px; height:12px; opacity:.8; }
+
+    .brand h1{
+      font-size: 14px; margin:0; letter-spacing: .2px;
+    }
+    .brand p{
+      margin:0; font-size: 12px; color: var(--muted);
+    }
+
+    .nav{
+      display:flex; align-items:center; gap: 10px; flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 13px; color: #2a2a2a;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+    }
+    .nav a:hover{
+      background: rgba(255,255,255,.95);
+      border-color: rgba(122,23,25,.25);
+      text-decoration:none;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .hero-left{
+      background: linear-gradient(180deg, rgba(122,23,25,.95), rgba(94,17,19,.98));
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 18px 40px rgba(94,17,19,.22);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left::before{
+      content:"";
+      position:absolute;
+      inset:-80px -120px auto auto;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.18), transparent 58%);
+      transform: rotate(12deg);
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      opacity: .95;
+    }
+    .hero-left h2{
+      margin: 14px 0 10px;
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+    }
+    .hero-left p{
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.86);
+      max-width: 52ch;
+      font-size: 14px;
+    }
+    .hero-actions{
+      display:flex; gap: 10px; flex-wrap: wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.18); text-decoration:none; }
+    .btn.primary{
+      background: #fff;
+      color: var(--brand-3);
+      border-color: rgba(255,255,255,.65);
+    }
+    .btn.primary:hover{ filter: brightness(.98); }
+
+    .hero-right{
+      background: rgba(255,255,255,.8);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .hero-card h3{
+      margin:0 0 6px;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .hero-card p{
+      margin:0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .pill{
+      background: rgba(122,23,25,.06);
+      border: 1px solid rgba(122,23,25,.18);
+      color: #2a2a2a;
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 13px;
+    }
+    .pill b{ color: var(--brand-3); }
+
+    /* Section blocks */
+    .section{
+      margin-top: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .section-head{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
+    }
+    .section-head h3{
+      margin:0;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .section-head span{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(0,0,0,.45);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 16px;
+    }
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      min-height: 120px;
+    }
+    .card h4{ margin:0 0 8px; font-size: 14px; }
+    .card p{ margin:0; color: var(--muted); font-size: 13px; }
+    .card code{
+      display:inline-block;
+      padding: 2px 6px;
+      background: rgba(122,23,25,.06);
+      border: 1px solid rgba(122,23,25,.14);
+      border-radius: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    /* FAQ (details) */
+    .faq{
+      padding: 8px 16px 16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    details{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 700;
+      font-size: 13px;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display:none; }
+    details p{
+      margin: 10px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Privacy */
+    .privacy{
+      padding: 16px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .privacy .panel{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .privacy h4{ margin:0 0 10px; font-size: 14px; }
+    .privacy p, .privacy li{
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .privacy ul{ margin: 8px 0 0 18px; padding:0; }
+    .note{
+      font-size: 12px;
+      color: rgba(0,0,0,.55);
+      background: rgba(122,23,25,.06);
+      border: 1px dashed rgba(122,23,25,.22);
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer{
+      padding: 22px 0 40px;
+      color: rgba(0,0,0,.55);
+      font-size: 12px;
+      text-align:center;
+    }
+
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .faq{ grid-template-columns: 1fr; }
+      .privacy{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Movie SkinArt Magic</h1>
+          <p>Support • Privacy • Contact</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#support">Support</a>
+        <a href="#faq">FAQ</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="kicker">✨ AI Inspiration</div>
+        <h2>From screen to skin —<br/>made personal.</h2>
+        <p>
+          Movie SkinArt helps you turn your favorite movies/series or your own photos into
+          unique tattoo-style artwork using AI.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#support">Get Support</a>
+          <a class="btn" href="#privacy">Read Privacy Policy</a>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-card">
+          <h3>Quick info</h3>
+          
+        </div>
+
+        <div class="mini-grid" aria-label="Highlights">
+          <div class="pill"><b>Input:</b> movie/series or personal photo</div>
+          <div class="pill"><b>Controls:</b> style, mood, placement</div>
+          <div class="pill"><b>Output:</b> generated SkinArt image</div>
+          <div class="pill"><b>Actions:</b> favorite, save, download</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SUPPORT -->
+    <section class="section" id="support">
+      <div class="section-head">
+        <div>
+          <h3>Support</h3>
+          <span>Last updated: <span id="lastUpdated">2025-12-25</span></span>
+        </div>
+        <span>v1.0</span>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h4>Need help?</h4>
+          <p>
+            Email us and include your device + iOS version and a short description.
+            We usually reply within a reasonable time.
+          </p>
+          <p style="margin-top:10px;"><code>nguyentuyenduc474@icloud.com</code></p>
+        </div>
+
+        <div class="card">
+          <h4>Common issues</h4>
+          <p>
+            If generation fails, please check your internet connection and try again.
+            If it still happens, send us a screenshot.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Feature requests</h4>
+          <p>
+            We love feedback. Tell us which styles, moods, or placements you’d like to see next.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <div>
+          <h3>FAQ</h3>
+          <span>Quick answers</span>
+        </div>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>Can I use my own photos?</summary>
+          <p>Yes. You can select a personal photo to generate SkinArt based on your choices.</p>
+        </details>
+
+        <details>
+          <summary>Why do results look different each time?</summary>
+          <p>AI generation can be slightly different depending on your options and creative variation.</p>
+        </details>
+
+        <details>
+          <summary>How do I delete my data?</summary>
+          <p>Contact us at <code>nguyentuyenduc474@icloud.com</code> and we’ll guide you based on what you used in the app.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section" id="privacy">
+      <div class="section-head">
+        <div>
+          <h3>Privacy Policy</h3>
+          <span>Simple & clear</span>
+        </div>
+      </div>
+
+      <div class="privacy">
+        <div class="panel">
+          <h4>What we collect</h4>
+          <p>We aim to collect as little as possible.</p>
+          <ul>
+            <li><b>User content you provide:</b> selected movie/series choice, optional personal photo.</li>
+            <li><b>App diagnostics (optional):</b> crash logs / performance data to improve stability.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h4>How we use it</h4>
+          <ul>
+            <li>To generate SkinArt based on your selected options.</li>
+            <li>To provide support and troubleshoot issues if you contact us.</li>
+            <li>To improve app reliability (crashes, bugs, performance).</li>
+          </ul>
+
+          <h4 style="margin-top:14px;">Storage & retention</h4>
+          <ul>
+            <li>Generated results may be stored locally on your device if you save/favorite them.</li>
+            <li>If you upload a photo for generation, it is used for processing and not intended to be kept longer than necessary.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h4>Sharing</h4>
+          <ul>
+            <li>We do not sell your personal information.</li>
+            <li>We may use third-party services for app functionality (e.g., hosting, analytics) depending on your build.</li>
+          </ul>
+
+          <h4 style="margin-top:14px;">Children</h4>
+          <p>Movie SkinArt is not intended for children under 13.</p>
+        </div>
+
+        <div class="panel">
+          <h4>Your choices</h4>
+          <ul>
+            <li>You can choose not to provide a personal photo.</li>
+            <li>You can delete saved/favorited items in the app.</li>
+            <li>Contact us to request help with data questions.</li>
+          </ul>
+
+          <h4 style="margin-top:14px;">Contact</h4>
+          <p>Email: <code>nguyentuyenduc474@icloud.com</code></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-head">
+        <div>
+          <h3>Contact</h3>
+          <span>We’re here to help</span>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h4>Email</h4>
+          <p><code>nguyentuyenduc474@icloud.com</code></p>
+          <p style="margin-top:8px;">Please include: device model, iOS version, and screenshots.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Movie SkinArt Magic. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
